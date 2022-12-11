@@ -1,0 +1,190 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<title></title>
+<style type="text/css" media="screen">
+/*基本样式*/
+* {
+    margin: 0;
+    padding: 0;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+html, body {
+    height: 100%;
+    color: #fff;
+}
+body {
+    min-width: 100%;
+}
+header, section, article, nav, aside, footer {
+    display: block;
+    text-align: center;
+    text-shadow: 1px 1px 1px #444;
+    font-size:1.2em;
+
+}
+/*页眉框样式：限高、限宽*/
+header {
+    min-height: 20px;
+    padding: 10px 20px;
+    min-width: 100%;
+}
+/*主体区域框样式：满宽显示*/
+section {
+    min-width: 100%;
+}
+/*导航框样式：固定宽度*/
+nav {
+    padding: 1%;
+    width: 220px;
+}
+/*文档栏样式*/
+article {
+    padding: 1%;
+}
+/*侧边栏样式：弹性宽度*/
+aside {
+    padding: 1%;
+    width: 220px;
+}
+/*页脚样式：限高、限宽*/
+footer {
+    min-height: 60px;
+    padding: 1%;
+    min-width: 100%;
+}
+/*flexbox样式*/
+body {
+    /*设置body为伸缩容器*/
+    display: -webkit-box;/*老版本：iOS 6-, Safari 3.1-6*/
+    display: -moz-box;/*老版本：Firefox 19- */
+    display: -ms-flexbox;/*混合版本：IE10*/
+    display: -webkit-flex;/*新版本：Chrome*/
+    display: flex;/*标准规范：Opera 12.1, Firefox 20+*/
+    /*伸缩项目换行*/
+    -moz-box-orient: vertical;
+    -webkit-box-orient: vertical;
+    -moz-box-direction: normal;
+    -moz-box-direction: normal;
+    -moz-box-lines: multiple;
+    -webkit-box-lines: multiple;
+    -webkit-flex-flow: column wrap;
+    -ms-flex-flow: column wrap;
+    flex-flow: column wrap;
+}
+/*实现stick footer效果*/
+section {
+    display: -moz-box;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    -ms-flex: 1;
+    -webkit-flex: 1;
+    flex: 1;
+    -moz-box-orient: horizontal;
+    -webkit-box-orient: horizontal;
+    -moz-box-direction: normal;
+    -webkit-box-direction: normal;
+    -moz-box-lines: multiple;
+    -webkit-box-lines: multiple;
+    -ms-flex-flow: row wrap;
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
+    -moz-box-align: stretch;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
+    -webkit-align-items: stretch;
+    align-items: stretch;
+}
+/*文章区域伸缩样式*/
+article {
+    -moz-box-flex: 1;
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    -webkit-flex: 1;
+    flex: 1;
+    -moz-box-ordinal-group: 2;
+    -webkit-box-ordinal-group: 2;
+    -ms-flex-order: 2;
+    -webkit-order: 2;
+    order: 2;
+}
+/*侧边栏伸缩样式*/
+aside {
+    -moz-box-ordinal-group: 3;
+    -webkit-box-ordinal-group: 3;
+    -ms-flex-order: 3;
+    -webkit-order: 3;
+    order: 3;
+}
+</style>
+<style>
+article {
+	margin: 2px;
+}
+nav {
+	margin: 2px;
+	background-color: rgba(127,127,127,0.5);
+}
+aside {
+	background-color: rgba(127,127,127,0.2);
+}
+ul {
+	list-style: none;
+}
+a {
+	text-decoration: none;
+	color: blue;
+}
+header {
+	background-color: #fff2cc;
+}
+footer {
+	background-color: #d5d5d5;
+}
+#footer li {
+	float: left;
+	margin-right: 100px;
+}
+aside ul li {
+	padding: 30px;
+	border: solid 2px;
+	border-color: #d3d3d3;
+	margin: 4px;
+}
+</style>
+</head>
+<body>
+	<header>王牌工作室的网站更新啦</header>
+	<section>
+		<article>王牌工作室，致力于开发最好的程序</article>
+		<nav><!--导航栏-->
+			<ul>
+				<li><a href="/">主页</a></li>
+				<li><a href="#">特色</a></li>
+				<li><a href="#">更新</a></li>
+			</ul>
+		</nav>
+		<aside><!--其他栏目-->
+			<ul>
+				<li><a href="#">文章文章</a></li>
+				<li><a href="#">文章文章</a></li>
+				<li><a href="#">文章文章</a></li>
+			</ul>
+		</aside>
+	</section>
+	<footer><!--页脚区域-->
+		<ul id="footer">
+			<li><a href="#">友情链接</a></li>
+			<li><a href="#">版权</a></li>
+			<li><a href="#">工具</a></li>
+		</ul>
+	</footer>
+</body>
+</html> 
