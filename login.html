@@ -172,7 +172,14 @@
 		</div>
 	</header>
 	<section>
-		<article>1.主体内容区域</article>
+		<article>
+            <form method="get" id="log_in">
+                <label for="login">姓名：</label>
+                <input type="text" id="login" name="username" />
+                <input type="submit" />
+            </form>
+
+        </article>
 		<nav><!--导航栏-->
 			<ul>
 				<li><a href="/">主页</a></li>
@@ -198,5 +205,36 @@
 			<li><a href="/tools/">工具</a></li>
 		</ul>
 	</footer>
+    <script>
+        $(function(){
+            $('#log_in').hide()
+                .slideDown(1000);
+        })
+    </script>
+    <script>
+        function getQueryString(n)
+        {  
+            var qs = location.search.substr(1), // 获取url中"?"符后的字串  
+                args = {}, // 保存参数数据的对象
+                items = qs.length ? qs.split("&") : [], // 取得每一个参数项,
+                item = null,
+                len = items.length;
+
+            for(var i = 0; i < len; i++)
+            {
+                    item = items[i].split("=");
+                    var name = decodeURIComponent(item[0]),
+                    value = decodeURIComponent(item[1]);
+                    if(name) {
+                    args[name] = value;
+                }
+            }
+            return args[n];
+        }
+        if(getQueryString('username')!=null)
+        {
+            alert('username:'+getQueryString('username'));
+        }
+    </script>
 </body>
 </html> 

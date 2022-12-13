@@ -163,6 +163,16 @@
 			overflow: hidden;
 		}
 	</style>
+	<script>
+		$(function(){
+			$('#games').hide()
+				.load('games.html');
+			$('#showgame').click(function(){
+				$('#games').slideToggle(1000);
+			});
+
+		})
+	</script>
 </head>
 <body>
 	<header>
@@ -172,7 +182,11 @@
 		</div>
 	</header>
 	<section>
-		<article>1.主体内容区域</article>
+		<article>
+            游戏作品:<br />
+			<button id="showgame">显示/隐藏</button><br />
+            <div id="games"></div>
+        </article>
 		<nav><!--导航栏-->
 			<ul>
 				<li><a href="/">主页</a></li>
